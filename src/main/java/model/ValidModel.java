@@ -29,7 +29,7 @@ public class ValidModel extends ValidParent {
     private Object nullObject = null;
 
     @Past
-    private Date pastDate = new Date();
+    private Date pastDate = new Date(new Date().getTime() - 1000000);
 
     @Future
     private Date futureDate = new Date(new Date().getTime() + 1000000);
