@@ -1,6 +1,7 @@
 package tests.setup;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 
 import javax.validation.Validation;
 import javax.validation.Validator;
@@ -8,8 +9,16 @@ import javax.validation.ValidatorFactory;
 
 public class Setup {
 
-    private ValidatorFactory factory;
+    // usually a SINGLETON
+    private static ValidatorFactory factory;
+
+    // usually a PROTOTYPE or ThreadLocal
     protected Validator validator;
+
+    @BeforeClass
+    static public void beforeAll() {
+        factory = Validation.buildDefaultValidatorFactory();
+    }
 
     /**
      * HAD TO RECREATE THE VALIDATOR BEFORE EACH TEST<br>
@@ -17,9 +26,6 @@ public class Setup {
      */
     @Before
     public void before() {
-
-        // should be created once
-        factory = Validation.buildDefaultValidatorFactory();
 
         // should be thread safe
         validator = factory.getValidator();
