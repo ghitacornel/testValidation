@@ -31,7 +31,7 @@ public class TestValidModel extends Setup {
 
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<ValidModel> violation = violations.iterator().next();
-        Assert.assertEquals("booleanTrue",violation.getPropertyPath().toString());
+        Assert.assertEquals("booleanTrue", violation.getPropertyPath().toString());
 
     }
 
@@ -45,8 +45,8 @@ public class TestValidModel extends Setup {
 
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<ValidModel> violation = violations.iterator().next();
-        Assert.assertEquals("orderType",violation.getPropertyPath().toString());
-        Assert.assertEquals("bad order, accepted 'top order' or 'low order'",violation.getMessage());
+        Assert.assertEquals("orderType", violation.getPropertyPath().toString());
+        Assert.assertEquals("bad order, accepted 'top order' or 'low order'", violation.getMessage());
 
     }
 
@@ -60,7 +60,7 @@ public class TestValidModel extends Setup {
 
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<ValidModel> violation = violations.iterator().next();
-        Assert.assertEquals("validInnerModel.booleanTrue",violation.getPropertyPath().toString());
+        Assert.assertEquals("validInnerModel.booleanTrue", violation.getPropertyPath().toString());
     }
 
     @Test
@@ -86,7 +86,7 @@ public class TestValidModel extends Setup {
 
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<ValidModel> violation = violations.iterator().next();
-        Assert.assertEquals("components[1].booleanTrue",violation.getPropertyPath().toString());
+        Assert.assertEquals("components[1].booleanTrue", violation.getPropertyPath().toString());
     }
 
     @Test
@@ -99,7 +99,21 @@ public class TestValidModel extends Setup {
 
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<ValidModel> violation = violations.iterator().next();
-        Assert.assertEquals("parentIntValue",violation.getPropertyPath().toString());
+        Assert.assertEquals("parentIntValue", violation.getPropertyPath().toString());
+    }
+
+    @Test
+    public void testNonValidEmail() {
+
+        ValidModel model = new ValidModel();
+        model.setEmail("xxx");
+
+        Set<ConstraintViolation<ValidModel>> violations = validator.validate(model);
+
+        Assert.assertEquals(1, violations.size());
+        ConstraintViolation<ValidModel> violation = violations.iterator().next();
+        Assert.assertEquals("email", violation.getPropertyPath().toString());
+        Assert.assertEquals("'xxx' must be a well-formed email address", violation.getMessage());
     }
 
 }

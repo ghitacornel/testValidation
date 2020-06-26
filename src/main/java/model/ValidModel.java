@@ -65,6 +65,10 @@ public class ValidModel extends ValidParent {
     @OrderType
     private String orderType;
 
+    // email with overridden default message
+    @Email
+    private String email = "aaa@bbb.com";
+
     public String getPattern() {
         return pattern;
     }
@@ -175,5 +179,13 @@ public class ValidModel extends ValidParent {
 
     public void setOrderType(String orderType) {
         this.orderType = orderType;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
