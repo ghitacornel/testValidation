@@ -12,10 +12,6 @@ import java.util.List;
 
 public class ValidModel extends ValidParent {
 
-    @Min(1)
-    @Max(6)
-    private int intValue = 2;
-
     @Size(min = 3, max = 5)
     private String stringValue = "abcd";
 
@@ -63,14 +59,6 @@ public class ValidModel extends ValidParent {
 
     public void setPattern(String pattern) {
         this.pattern = pattern;
-    }
-
-    public int getIntValue() {
-        return intValue;
-    }
-
-    public void setIntValue(int intValue) {
-        this.intValue = intValue;
     }
 
     public String getStringValue() {
