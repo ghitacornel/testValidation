@@ -1,13 +1,11 @@
 package model;
 
-import validators.OrderType;
+import custom.CustomValidationRule;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class ValidModel extends ValidParent {
@@ -35,7 +33,7 @@ public class ValidModel extends ValidParent {
         components.add(new ValidComponent());
     }
 
-    @OrderType
+    @CustomValidationRule
     private String orderType;
 
     // email with overridden default message

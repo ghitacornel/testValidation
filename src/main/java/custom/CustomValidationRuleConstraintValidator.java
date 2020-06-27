@@ -1,13 +1,13 @@
-package validators;
+package custom;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class OrderTypeValidator implements ConstraintValidator<OrderType, String> {
+public class CustomValidationRuleConstraintValidator implements ConstraintValidator<CustomValidationRule, String> {
 
     @Override
-    public void initialize(OrderType constraintAnnotation) {
-
+    public void initialize(CustomValidationRule constraintAnnotation) {
+        // do nothing
     }
 
     @Override
