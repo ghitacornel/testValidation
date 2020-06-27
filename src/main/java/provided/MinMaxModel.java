@@ -7,6 +7,6 @@ public class MinMaxModel {
 
     @Min(-3)
     @Max(3)
-    int value;
+    Integer value;
 
 }

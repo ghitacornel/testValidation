@@ -24,11 +24,6 @@ public class ValidModel extends ValidParent {
     @Future
     private Date futureDate = new Date(new Date().getTime() + 1000000);
 
-    @DecimalMax("1000")
-    @DecimalMin("10")
-    @Digits(integer = 5, fraction = 2)
-    private BigDecimal decimal = new BigDecimal("100.1");
-
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     @Pattern(regexp = EMAIL_PATTERN)
@@ -83,14 +78,6 @@ public class ValidModel extends ValidParent {
 
     public void setFutureDate(Date futureDate) {
         this.futureDate = futureDate;
-    }
-
-    public BigDecimal getDecimal() {
-        return decimal;
-    }
-
-    public void setDecimal(BigDecimal decimal) {
-        this.decimal = decimal;
     }
 
     public List<String> getList() {

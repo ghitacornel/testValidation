@@ -18,6 +18,12 @@ public class MinMaxModelTest extends Setup {
     }
 
     @Test
+    public void okNull() {
+        // null is OK
+        Assert.assertTrue(validator.validate(subject).isEmpty());
+    }
+
+    @Test
     public void failMin() {
         subject.value = -4;
         Set<ConstraintViolation<MinMaxModel>> violations = validator.validate(subject);
