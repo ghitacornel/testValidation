@@ -18,12 +18,6 @@ public class ValidModel extends ValidParent {
     @Size(min = 3, max = 5)
     private List<String> list = Arrays.asList("a", "b", "c", "d");
 
-    @Past
-    private Date pastDate = new Date(new Date().getTime() - 1000000);
-
-    @Future
-    private Date futureDate = new Date(new Date().getTime() + 1000000);
-
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     @Pattern(regexp = EMAIL_PATTERN)
@@ -62,22 +56,6 @@ public class ValidModel extends ValidParent {
 
     public void setStringValue(String stringValue) {
         this.stringValue = stringValue;
-    }
-
-    public Date getPastDate() {
-        return pastDate;
-    }
-
-    public void setPastDate(Date pastDate) {
-        this.pastDate = pastDate;
-    }
-
-    public Date getFutureDate() {
-        return futureDate;
-    }
-
-    public void setFutureDate(Date futureDate) {
-        this.futureDate = futureDate;
     }
 
     public List<String> getList() {

@@ -7,7 +7,7 @@ import tests.setup.Setup;
 import javax.validation.ConstraintViolation;
 import java.util.*;
 
-public class NotemptyModelTest extends Setup {
+public class NotEmptyModelTest extends Setup {
 
     NotEmptyModel subject = new NotEmptyModel();
 
