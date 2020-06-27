@@ -1,0 +1,28 @@
+package provided;
+
+import org.junit.Assert;
+import org.junit.Test;
+import tests.setup.Setup;
+
+import javax.validation.ConstraintViolation;
+import java.util.Set;
+
+public class AssertTrueModelTest extends Setup {
+
+    AssertTrueModel subject = new AssertTrueModel();
+
+    @Test
+    public void ok() {
+        subject.object = true;
+        Assert.assertTrue(validator.validate(subject).isEmpty());
+    }
+
+    @Test
+    public void fail() {
+        subject.object = false;
+        Set<ConstraintViolation<AssertTrueModel>> violations = validator.validate(subject);
+        Assert.assertEquals(1, violations.size());
+        ConstraintViolation<AssertTrueModel> violation = violations.iterator().next();
+        Assert.assertEquals("must be true", violation.getMessage());
+    }
+}

@@ -22,23 +22,11 @@ public class ValidModel extends ValidParent {
     @Size(min = 3, max = 5)
     private List<String> list = Arrays.asList("a", "b", "c", "d");
 
-    @NotNull
-    private Object notNullObject = new Object();
-
-    @Null
-    private Object nullObject = null;
-
     @Past
     private Date pastDate = new Date(new Date().getTime() - 1000000);
 
     @Future
     private Date futureDate = new Date(new Date().getTime() + 1000000);
-
-    @AssertTrue
-    private Boolean booleanTrue = true;
-
-    @AssertFalse
-    private Boolean booleanFalse = false;
 
     @DecimalMax("1000")
     @DecimalMin("10")
@@ -93,22 +81,6 @@ public class ValidModel extends ValidParent {
         this.stringValue = stringValue;
     }
 
-    public Object getNotNullObject() {
-        return notNullObject;
-    }
-
-    public void setNotNullObject(Object notNullObject) {
-        this.notNullObject = notNullObject;
-    }
-
-    public Object getNullObject() {
-        return nullObject;
-    }
-
-    public void setNullObject(Object nullObject) {
-        this.nullObject = nullObject;
-    }
-
     public Date getPastDate() {
         return pastDate;
     }
@@ -123,22 +95,6 @@ public class ValidModel extends ValidParent {
 
     public void setFutureDate(Date futureDate) {
         this.futureDate = futureDate;
-    }
-
-    public Boolean getBooleanTrue() {
-        return booleanTrue;
-    }
-
-    public void setBooleanTrue(Boolean booleanTrue) {
-        this.booleanTrue = booleanTrue;
-    }
-
-    public Boolean getBooleanFalse() {
-        return booleanFalse;
-    }
-
-    public void setBooleanFalse(Boolean booleanFalse) {
-        this.booleanFalse = booleanFalse;
     }
 
     public BigDecimal getDecimal() {

@@ -25,13 +25,13 @@ public class TestValidModel extends Setup {
     public void testNonValidModel() {
 
         ValidModel model = new ValidModel();
-        model.setBooleanTrue(false);
+        model.setIntValue(-1);
 
         Set<ConstraintViolation<ValidModel>> violations = validator.validate(model);
 
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<ValidModel> violation = violations.iterator().next();
-        Assert.assertEquals("booleanTrue", violation.getPropertyPath().toString());
+        Assert.assertEquals("intValue", violation.getPropertyPath().toString());
 
     }
 
@@ -67,7 +67,7 @@ public class TestValidModel extends Setup {
     public void testNonValidModelAndInnerModel() {
 
         ValidModel model = new ValidModel();
-        model.setBooleanTrue(false);
+        model.setIntValue(-1);
         model.getValidInnerModel().setBooleanTrue(false);
 
         Set<ConstraintViolation<ValidModel>> violations = validator.validate(model);
