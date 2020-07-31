@@ -2,7 +2,7 @@ package custom;
 
 import org.junit.Assert;
 import org.junit.Test;
-import tests.setup.Setup;
+import setup.Setup;
 
 import javax.validation.ConstraintViolation;
 import java.util.*;

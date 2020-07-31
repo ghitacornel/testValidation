@@ -2,11 +2,9 @@ package provided;
 
 import org.junit.Assert;
 import org.junit.Test;
-import tests.setup.Setup;
+import setup.Setup;
 
 import javax.validation.ConstraintViolation;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class NotBlankModelTest extends Setup {
