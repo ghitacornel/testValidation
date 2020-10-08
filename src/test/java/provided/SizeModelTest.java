@@ -115,4 +115,15 @@ public class SizeModelTest extends Setup {
         Assert.assertEquals("{javax.validation.constraints.Size.message}", violation.getMessageTemplate());
         Assert.assertEquals("array", violation.getPropertyPath().toString());
     }
+
+    @Test
+    public void failCustomText() {
+        subject.customText = "ab";
+        Set<ConstraintViolation<SizeModel>> violations = validator.validate(subject);
+        Assert.assertEquals(1, violations.size());
+        ConstraintViolation<SizeModel> violation = violations.iterator().next();
+        Assert.assertEquals("'ab' value must be of length between 3 and 6", violation.getMessage());
+        Assert.assertEquals("'${validatedValue}' value must be of length between {min} and {max}", violation.getMessageTemplate());
+        Assert.assertEquals("customText", violation.getPropertyPath().toString());
+    }
 }

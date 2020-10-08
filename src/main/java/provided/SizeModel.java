@@ -9,6 +9,9 @@ public class SizeModel {
     @Size(min = 3, max = 6)
     String text;
 
+    @Size(min = 3, max = 6, message = "'${validatedValue}' value must be of length between {min} and {max}")
+    String customText;
+
     @Size(min = 3, max = 6)
     Collection<Integer> objects;
 
