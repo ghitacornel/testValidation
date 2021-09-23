@@ -25,6 +25,6 @@ public class NullModelTest extends Setup {
         ConstraintViolation<NullModel> violation = violations.iterator().next();
         Assert.assertEquals("must be null", violation.getMessage());
         Assert.assertEquals("{javax.validation.constraints.Null.message}", violation.getMessageTemplate());
-        Assert.assertEquals("object", violation.getPropertyPath().toString());
+        Assert.assertEquals("property", violation.getPropertyPath().toString());
     }
 }

@@ -25,6 +25,6 @@ public class NotNullModelTest extends Setup {
         ConstraintViolation<NotNullModel> violation = violations.iterator().next();
         Assert.assertEquals("must not be null", violation.getMessage());
         Assert.assertEquals("{javax.validation.constraints.NotNull.message}", violation.getMessageTemplate());
-        Assert.assertEquals("object", violation.getPropertyPath().toString());
+        Assert.assertEquals("property", violation.getPropertyPath().toString());
     }
 }

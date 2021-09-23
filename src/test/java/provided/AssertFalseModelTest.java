@@ -25,6 +25,6 @@ public class AssertFalseModelTest extends Setup {
         ConstraintViolation<AssertFalseModel> violation = violations.iterator().next();
         Assert.assertEquals("must be false", violation.getMessage());
         Assert.assertEquals("{javax.validation.constraints.AssertFalse.message}", violation.getMessageTemplate());
-        Assert.assertEquals("object", violation.getPropertyPath().toString());
+        Assert.assertEquals("property", violation.getPropertyPath().toString());
     }
 }
