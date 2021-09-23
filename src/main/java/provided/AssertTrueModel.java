@@ -5,6 +5,6 @@ import javax.validation.constraints.AssertTrue;
 public class AssertTrueModel {
 
     @AssertTrue
-    Boolean object;
+    Boolean property;
 
 }

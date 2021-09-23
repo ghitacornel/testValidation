@@ -5,6 +5,6 @@ import javax.validation.constraints.AssertFalse;
 public class AssertFalseModel {
 
     @AssertFalse
-    boolean object;
+    boolean property;
 
 }

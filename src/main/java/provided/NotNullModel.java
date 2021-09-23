@@ -5,6 +5,6 @@ import javax.validation.constraints.NotNull;
 public class NotNullModel {
 
     @NotNull
-    Object object;
+    Object property;
 
 }

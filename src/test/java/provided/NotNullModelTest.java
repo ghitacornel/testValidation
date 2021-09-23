@@ -13,13 +13,13 @@ public class NotNullModelTest extends Setup {
 
     @Test
     public void ok() {
-        subject.object = new Object();
+        subject.property = new Object();
         Assert.assertTrue(validator.validate(subject).isEmpty());
     }
 
     @Test
     public void fail() {
-        subject.object = null;
+        subject.property = null;
         Set<ConstraintViolation<NotNullModel>> violations = validator.validate(subject);
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<NotNullModel> violation = violations.iterator().next();

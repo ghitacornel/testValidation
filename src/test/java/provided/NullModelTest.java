@@ -13,13 +13,13 @@ public class NullModelTest extends Setup {
 
     @Test
     public void ok() {
-        subject.object = null;
+        subject.property = null;
         Assert.assertTrue(validator.validate(subject).isEmpty());
     }
 
     @Test
     public void fail() {
-        subject.object = new Object();
+        subject.property = new Object();
         Set<ConstraintViolation<NullModel>> violations = validator.validate(subject);
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<NullModel> violation = violations.iterator().next();

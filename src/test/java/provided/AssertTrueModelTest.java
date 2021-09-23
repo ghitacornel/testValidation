@@ -13,13 +13,13 @@ public class AssertTrueModelTest extends Setup {
 
     @Test
     public void ok() {
-        subject.object = true;
+        subject.property = true;
         Assert.assertTrue(validator.validate(subject).isEmpty());
     }
 
     @Test
     public void fail() {
-        subject.object = false;
+        subject.property = false;
         Set<ConstraintViolation<AssertTrueModel>> violations = validator.validate(subject);
         Assert.assertEquals(1, violations.size());
         ConstraintViolation<AssertTrueModel> violation = violations.iterator().next();
